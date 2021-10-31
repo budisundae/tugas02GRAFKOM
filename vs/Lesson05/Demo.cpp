@@ -129,7 +129,7 @@ void Demo::Render() {
 	glEnable(GL_DEPTH_TEST);
 
 	// Pass perspective projection matrix
-	glm::mat4 projection = glm::perspective(45.0f, (GLfloat)this->screenWidth / (GLfloat)this->screenHeight, 0.1f, 100.0f);
+	glm::mat4 projection = glm::perspective(fovy, (GLfloat)this->screenWidth / (GLfloat)this->screenHeight, 0.1f, 100.0f);
 	GLint projLoc = glGetUniformLocation(this->shaderProgram, "projection");
 	glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(projection));
 
